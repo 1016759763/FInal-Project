@@ -20,10 +20,21 @@ Here shows the easiest way for you to run the codes. In the file, pretrain datas
 
 * Yelp2018 dataset
 ```
-python Main.py --model_type kgat --alg_type bi --dataset yelp2018 --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
+python Main.py --model_type kgat --alg_type bi --dataset yelp2018 --regs [1e-5,1e-5] --layer_size [32,16,8] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
 ```
 
 * Amazon-book dataset
 ```
-python Main.py --model_type kgat --alg_type bi --dataset amazon-book --regs [1e-5,1e-5] --layer_size [64,32,16] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
+python Main.py --model_type kgat --alg_type bi --dataset amazon-book --regs [1e-5,1e-5] --layer_size [32,16,8] --embed_size 64 --lr 0.0001 --epoch 1000 --verbose 50 --save_flag 1 --pretrain -1 --batch_size 1024 --node_dropout [0.1] --mess_dropout [0.1,0.1,0.1] --use_att True --use_kge True
 ```
+
+## Dataset
+
+Two processed datasets: Amazon-book and Yelp2018. [Amazon-book](http://jmcauley.ucsd.edu/data/amazon) and [Yelp2018 (https://www.yelp.com/dataset/challenge).
+
+The whole experiment follows [KB4Rec](https://github.com/RUCDM/KB4Rec) to preprocess Amazon-book and Last-FM datasets, mapping items into Freebase entities via title matching if there is a mapping available.
+
+  
+## Acknowledgement
+
+These models are based on Dr. He's KGAT and Neural FM papers and Dr. Zhang's CFKG paper. Thanks for their hardworking letting me can learn the latest Recommender Systems.
